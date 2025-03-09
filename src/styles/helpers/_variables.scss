@@ -1,0 +1,41 @@
+:root {
+    --c-white: #fff;
+    --c-black: #000;
+    --c-accent: #00B207;
+    --c-accent-light: #84D187;
+    --c-accent-dark: #2C742F;
+    --c-warning: #FF8A00;
+    --c-error: #EA4B48;
+    --c-text: #141414;
+
+    --m-xs: 500;
+    --m-mobile: 767;
+    --m-tablet: 1023;
+    --m-laptop: 1260;
+}
+
+// шрифты
+$ff-main: 'Poppins', Arial, Helvetica, sans-serif;
+$ff-second: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+
+// media
+$media-list: (
+    'xs': var(--m-xs),
+    'mobile': var(--m-mobile),
+    'tablet': var(--m-tablet),
+    'laptop': var(--m-laptop),
+);
+
+// Цвета
+$c-white: var(--c-white);
+$c-black: var(--c-black);
+$c-accent: var(--c-accent);
+$c-accent-light: var(--c-accent-light);
+$c-accent-dark: var(--c-accent-dark);
+$c-warning: var(--c-warning);
+$c-error: var(--c-error);
+$c-text: var(--c-text);
+
+// переходы
+$tr-time: .3s;
+$tr-time-long: .5s;
