@@ -1,7 +1,83 @@
 extends layouts/default
-include helpers/mixins
 
 block variables
-	- const title = "Главная"
+	- const title = "Страницы"
 
 block content
+	style(type="text/css").
+		.pages-list {
+			padding: 40px 0 60px;
+		}
+
+		.pages-list__links {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-gap: 20px;
+			margin-top: 30px;
+		}
+
+		.pages-list__subtitle {
+			margin-top: 60px;
+			font-size: 32px !important;
+		}
+
+		.pages-list__link {
+			position: relative;
+			font-size: 26px;
+			text-decoration: none;
+			color: var(--c-text);
+			transition: color 0.3s linear;
+			line-height: 1.02em;
+			min-height: 3.06em;
+			padding-right: 160px;
+
+			span {
+				font-size: 0.7em;
+				opacity: 0.7;
+			}
+		}
+
+		.pages-list__link:hover {
+			color: var(--c-accent);
+		}
+
+
+		@media (max-width: 1420px) {
+
+			.pages-list__links {
+				grid-gap: 15px;
+				margin-top: 40px;
+			}
+
+			.pages-list__link {
+				font-size: 20px;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.pages-list {
+				padding: 85px 0 50px;
+			}
+
+			.pages-list__links {
+				grid-template-columns: 1fr;
+				grid-gap: 20px;
+				margin-top: 40px;
+			}
+
+			.pages-list__link {
+				min-height: auto;
+			}
+		}
+
+	.page-layout
+		section.e-section.pages-list
+			.e-container
+				+title({
+					classes: 'pages-list__title',
+					tag: 'h1',
+					text: 'Страницы'
+				})
+
+				.pages-list__links
+					a.pages-list__link(href="home.html" target="_blank") Главная

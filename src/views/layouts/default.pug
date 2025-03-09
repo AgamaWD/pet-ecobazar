@@ -30,11 +30,15 @@ html(lang="ru")
 
 
 	body
+		include ../../views/helpers/mixins
+		+mixins
+
 		block header
-			include ../../blocks/modules/header/header
+			+header
 
 		main.site-main
 			block content
+
 		block footer
 			include ../../blocks/modules/footer/footer
 
