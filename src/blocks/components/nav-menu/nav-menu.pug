@@ -1,0 +1,35 @@
+-
+    const defaultNavMenuProps = {
+        classes: '',
+        items: []
+    }
+
+mixin nav-menu(props = defaultNavMenuProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultNavMenuProps.classes,
+            items: props.items ? props.items : defaultNavMenuProps.items,
+        }
+
+    nav.nav-menu(class=checkProps.classes)&attributes(attributes)
+        - let i = 0
+        - let items = checkProps.items 
+        -while(i < items.length)
+            .nav-menu__item
+                - if(items[i].isLink == true)
+                    a.nav-menu__name(href="javascript:void(0);")!= items[i].name
+                    -if(items[i].links.length > 0)
+                        .nav-menu__icon
+                - else
+                    .nav-menu__name!= items[i].name
+
+                -if(items[i].links.length > 0)
+                    .nav-menu__list
+                        - let j = 0
+                        - let links = items[i].links
+                        - while(j < links.length)
+                            a.nav-menu__link(href="javascript:void(0);")!= links[j]
+
+                            -j++
+
+            - i++

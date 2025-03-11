@@ -1,3 +1,79 @@
-mixin header()
+mixin header(cMode = '')
+	- const cModeClass = cMode.length > 0 ? ' site-header--dark' : ''
 	header.site-header
-		|  header
+		.site-header__top
+			.site-header__block.site-header__location
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#location`)
+				span Store Location: Lincoln- 344, Illinois, Chicago, USA
+			.site-header__block.site-header__params
+		.site-header__bottom
+			.site-header__block.site-header__nav
+				+nav-menu({
+					items: [
+						{
+							name: 'Home',
+							isLink: true,
+							links: [
+								'link1',
+								'link2',
+								'link3',
+								'link4',
+							]
+						},
+						{
+							name: 'Shop',
+							isLink: true,
+							links: [
+								'link1',
+								'link2',
+								'link3',
+								'link4',
+							]
+						},
+						{
+							name: 'Pages',
+							isLink: true,
+							links: [
+								'link1',
+								'link2',
+								'link3',
+								'link4',
+							]
+						},
+						{
+							name: 'Blog',
+							isLink: true,
+							links: [
+								'link1',
+								'link2',
+								'link3',
+								'link4',
+							]
+						},
+						{
+							name: 'About Us',
+							isLink: true,
+							links: []
+						}
+					]
+				})
+
+			.site-header__block.site-header__logo
+				img(src="img/logo_full.svg" alt="logotype")
+
+			.site-header__block.site-header__shop
+				+btn-icon({
+					icon: 'search'
+				})
+				+btn-icon({
+					icon: 'favorites'
+				})
+				+btn-icon({
+					icon: 'cart'
+				})
+				+btn-icon({
+					icon: 'personal_area'
+				})
+
+

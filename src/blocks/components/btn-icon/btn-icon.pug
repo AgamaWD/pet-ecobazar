@@ -1,0 +1,18 @@
+-
+	const defaultBtnIconProps = {
+		classes: '',
+		icon: '',
+
+	}
+
+mixin btn-icon(props = defaultBtnIconProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultBtnIconProps.classes,
+			icon: props.icon ? props.icon : defaultBtnIconProps.icon
+		}
+
+	a.btn-icon(href="javascript:void(0)" class=checkProps.classes)&attributes(attributes)
+		svg
+			use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
+
